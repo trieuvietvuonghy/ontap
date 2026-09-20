@@ -23,6 +23,7 @@
     backToLandingBtn: document.getElementById("backToLandingBtn"),
     resumeBtn: document.getElementById("resumeBtn"),
     landingSequential: document.getElementById("landingSequential"),
+    landingTotalLabel: document.getElementById("landingTotalLabel"),
     landingPercent: document.getElementById("landingPercent"),
     landingProgressFill: document.getElementById("landingProgressFill"),
     resumeHint: document.getElementById("resumeHint"),
@@ -30,6 +31,7 @@
     landingWrong: document.getElementById("landingWrong"),
     landingBookmarked: document.getElementById("landingBookmarked"),
     studySequential: document.getElementById("studySequential"),
+    studyTotalLabel: document.getElementById("studyTotalLabel"),
     studyProgressFill: document.getElementById("studyProgressFill"),
     studyCompleted: document.getElementById("studyCompleted"),
     studyWrong: document.getElementById("studyWrong"),
@@ -123,6 +125,7 @@
     const percent = Math.round((stats.sequential / TOTAL) * 100);
 
     el.landingSequential.textContent = stats.sequential;
+    el.landingTotalLabel.textContent = `/${TOTAL} câu`;
     el.landingPercent.textContent = `${percent}%`;
     el.landingProgressFill.style.width = `${percent}%`;
     el.landingCompleted.textContent = stats.completed;
@@ -134,10 +137,10 @@
       el.resumeHint.textContent = "Bạn chưa bắt đầu ôn tập.";
     } else if (stats.sequential >= TOTAL) {
       el.resumeBtn.textContent = `Xem lại từ câu ${TOTAL}`;
-      el.resumeHint.textContent = "Bạn đã hoàn thành toàn bộ lộ trình tuần tự.";
+      el.resumeHint.textContent = `Bạn đã ôn xong cả ${TOTAL} câu. Muốn luyện lại, bấm "Ôn lại từ đầu" bên dưới.`;
     } else {
       el.resumeBtn.textContent = `Tiếp tục từ câu ${stats.sequential + 1}`;
-      el.resumeHint.textContent = `Đã hoàn thành liên tiếp ${stats.sequential} câu đầu tiên.`;
+      el.resumeHint.textContent = `Đã ôn xong câu 1–${stats.sequential}. Tiếp theo là câu ${stats.sequential + 1}.`;
     }
 
     updateStudyStats(stats);
@@ -146,6 +149,7 @@
   function updateStudyStats(stats = getStats()) {
     const percent = (stats.sequential / TOTAL) * 100;
     el.studySequential.textContent = stats.sequential;
+    el.studyTotalLabel.textContent = `/${TOTAL}`;
     el.studyProgressFill.style.width = `${percent}%`;
     el.studyCompleted.textContent = stats.completed;
     el.studyWrong.textContent = stats.wrong;
@@ -308,7 +312,7 @@
 
   function resetProgress() {
     const confirmed = window.confirm(
-      "Đặt lại toàn bộ tiến độ? Tất cả đáp án và câu đã đánh dấu trên thiết bị này sẽ bị xóa."
+      "Ôn lại từ đầu? Xóa hết đáp án đã chọn và câu đã đánh dấu trên thiết bị này. Sau đó bạn sẽ ôn lại từ câu 1."
     );
     if (!confirmed) return;
 

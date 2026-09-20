@@ -45,7 +45,7 @@
             <div class="progress-card-head">
               <div>
                 <span class="muted-label">Tiến độ tuần tự</span>
-                <strong class="progress-number"><span id="landingSequential">0</span><span> câu</span></strong>
+                <strong class="progress-number"><span id="landingSequential">0</span><span id="landingTotalLabel">/112 câu</span></strong>
               </div>
               <span class="progress-percent" id="landingPercent">0%</span>
             </div>
@@ -87,7 +87,7 @@
 
         <div class="landing-footer">
           <p>Ứng dụng ôn tập thuộc sở hữu của Ủy ban Kiểm tra Đảng ủy xã Triệu Việt Vương, tỉnh Hưng Yên. Nghiêm cấm việc phát tán, sử dụng trái phép</p>
-          <button class="text-button danger-text" id="resetBtnLanding" type="button">Đặt lại toàn bộ tiến độ</button>
+          <button class="text-button danger-text" id="resetBtnLanding" type="button">Ôn lại từ đầu. Xóa hết đáp án đã chọn</button>
         </div>
       </section>
 
@@ -106,7 +106,7 @@
           </div>
 
           <div class="study-progress-row">
-            <span>Đã hoàn thành <strong id="studySequential">0</strong> câu</span>
+            <span>Đã ôn xong <strong id="studySequential">0</strong><span id="studyTotalLabel">/112</span> câu</span>
             <div class="compact-progress-track" aria-hidden="true">
               <div class="compact-progress-fill" id="studyProgressFill"></div>
             </div>
@@ -124,7 +124,7 @@
             <button class="secondary-button nav-button" id="prevBtn" type="button">← Câu trước</button>
             <button class="primary-button nav-button" id="nextBtn" type="button">Câu tiếp →</button>
             </div>
-            <button class="reset-progress-button" id="resetBtnStudy" type="button">Đặt lại toàn bộ tiến độ</button>
+            <button class="reset-progress-button" id="resetBtnStudy" type="button">Ôn lại từ đầu. Xóa hết đáp án đã chọn</button>
           </div>
         </div>
 
