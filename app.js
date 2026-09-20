@@ -312,7 +312,7 @@
 
   function resetProgress() {
     const confirmed = window.confirm(
-      "Cảnh báo: Các đáp án bạn đã chọn sẽ được đặt lại. Bạn sẽ ôn tập lại từ câu 1."
+      "Các đáp án bạn đã chọn sẽ được đặt lại. Bạn sẽ ôn tập lại từ câu 1."
     );
     if (!confirmed) return;
 
