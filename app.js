@@ -137,7 +137,7 @@
       el.resumeHint.textContent = "Bạn chưa bắt đầu ôn tập.";
     } else if (stats.sequential >= TOTAL) {
       el.resumeBtn.textContent = `Xem lại từ câu ${TOTAL}`;
-      el.resumeHint.textContent = `Bạn đã ôn xong cả ${TOTAL} câu. Muốn luyện lại, bấm "Ôn lại từ câu 1" bên dưới.`;
+      el.resumeHint.textContent = `Bạn đã ôn xong cả ${TOTAL} câu. Muốn luyện lại, bấm "Ôn lại từ đầu" bên dưới.`;
     } else {
       el.resumeBtn.textContent = `Tiếp tục từ câu ${stats.sequential + 1}`;
       el.resumeHint.textContent = `Đã ôn xong câu 1–${stats.sequential}. Tiếp theo là câu ${stats.sequential + 1}.`;
