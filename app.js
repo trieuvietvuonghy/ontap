@@ -3,7 +3,9 @@
 
   const QUESTIONS = window.QUESTIONS;
   const TOTAL = QUESTIONS.length;
-  const STORAGE_KEY = "trieu-viet-vuong-study-v1";
+  const STORAGE_KEY = "trieu-viet-vuong-study-v2";
+  // v1 stored progress by position in the old question order; it no longer maps to the same questions.
+  const LEGACY_STORAGE_KEYS = ["trieu-viet-vuong-study-v1"];
   const LETTERS = ["A", "B", "C", "D"];
 
   const defaultState = () => ({
@@ -47,6 +49,12 @@
   };
 
   function loadState() {
+    try {
+      LEGACY_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
+    } catch {
+      // Storage unavailable: nothing to clean up.
+    }
+
     try {
       const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
       if (!parsed || typeof parsed !== "object") return defaultState();

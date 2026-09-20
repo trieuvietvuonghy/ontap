@@ -1016,6 +1016,16 @@ button {
   line-height: 1.6;
 }
 
+/* Ownership notice, same text as on the landing page */
+.study-footer {
+  margin: -12px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-500);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
 /* Question picker --------------------------------------------------------- */
 .question-dialog {
   width: min(780px, calc(100% - 32px));
@@ -1240,6 +1250,11 @@ button {
   .study-sidebar {
     position: static;
     grid-template-columns: 1fr 1fr;
+    align-items: start;
+    margin-top: 0;
+  }
+
+  .study-footer {
     margin-top: 0;
   }
 
@@ -1366,7 +1381,8 @@ button {
     line-height: 1.45;
   }
 
-  .landing-footer {
+  .landing-footer,
+  .study-footer {
     font-size: 0.75rem;
   }
 
